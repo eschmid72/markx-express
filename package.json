@@ -1,17 +1,17 @@
 {
-  "name": "markdown-doc",
+  "name": "markx-express",
   "version": "0.0.0",
-  "description": "",
+  "description": "Hosting documentations written with Markdown language using node express",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Egon Schmid <eschmid1972@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "express": "^4.13.3",
+    "highlightjs": "^8.7.0",
     "jade": "^1.11.0",
-    "marked": "^0.3.5",
-    "pygmentize-bundled": "^2.3.0"
+    "marked": "^0.3.5"
   }
 }
