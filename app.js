@@ -10,7 +10,7 @@ app.set('view engine', 'jade');
 
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
 
-var config = fs.existsSync(__dirname+'/config.json') ? require('config.json') : {};
+var config = fs.existsSync(__dirname+'/config.json') ? require('./config.json') : {};
 
 marked.setOptions({
     highlight: function (code) {
@@ -67,7 +67,7 @@ var expressMarkdown = function (options) {
             });
         });
     }
-}
+};
 
 app.use(expressMarkdown({
     directory: config.directory || __dirname + '/sampledoc',
