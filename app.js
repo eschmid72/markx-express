@@ -10,6 +10,8 @@ app.set('view engine', 'jade');
 
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
 
+var config = fs.existsSync(__dirname+'/config.json') ? require('config.json') : {};
+
 marked.setOptions({
     highlight: function (code) {
         return require('highlight.js').highlightAuto(code).value;
@@ -68,10 +70,9 @@ var expressMarkdown = function (options) {
 }
 
 app.use(expressMarkdown({
-    directory: __dirname + '/pages',
+    directory: config.directory || __dirname + '/sampledoc',
     view: 'markdown'
 }));
 
-
-app.listen(5000);
+app.listen(config.port || 5000);
 
