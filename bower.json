@@ -1,0 +1,20 @@
+{
+  "name": "markx-express",
+  "version": "0.0.0",
+  "homepage": "https://github.com/eschmid72/markx-express",
+  "authors": [
+    "Egon Schmid <eschmid1972@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "highlightjs": "~8.9.1",
+    "github-markdown-css": "~2.1.1"
+  }
+}
