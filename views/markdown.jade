@@ -2,8 +2,16 @@ doctype html
 html
     head
         title!='Titel'
-        script(type='text/javascript' src='/bower_components/highlightjs/highlight.pack.min.js')
-        link(rel='stylesheet', href='/bower_components/highlightjs/styles/brown_paper.css', type='text/css')
+        script(type='text/javascript' src='/bower_components/jquery/dist/jquery.min.js')
+        link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.min.css', type='text/css')
+        link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap-theme.min.css', type='text/css')
+        script(type='text/javascript' src='/bower_components/bootstrap/dist/js/bootstrap.min.js')
         link(rel='stylesheet', href='/bower_components/github-markdown-css/github-markdown.css', type='text/css')
+        style(type='text/css').
+            .markdown-body .highlight pre, .markdown-body pre {
+                background-color: #000;
+                color: #fff;
+            }
     body
-        div.markdown-body!=markdown
+        .container-fluid
+            div.markdown-body!=markdown
