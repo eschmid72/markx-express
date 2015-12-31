@@ -2,8 +2,23 @@ var fs = require('fs'),
     path = require('path'),
     url = require('url'),
     express = require('express'),
-    showdown = require('showdown'),
-    converter = new showdown.Converter();
+    hljs = require('highlight.js');
+
+var md = require('markdown-it')({
+    highlight: function (str, lang) {
+        if (lang && hljs.getLanguage(lang)) {
+            try {
+                return hljs.highlight(lang, str).value;
+            } catch (__) {}
+        }
+
+        try {
+            return hljs.highlightAuto(str).value;
+        } catch (__) {}
+
+        return ''; // use external default escaping
+    }
+});
 
 var app = express();
 
@@ -50,10 +65,10 @@ var expressMarkdown = function (options) {
                 if (err)
                     return next(err);
 
-                data = converter.makeHtml(data);
+                var html = md.render(data);
 
                 if (view) {
-                    context[variable] = data;
+                    context[variable] = html;
                     res.render(view, context);
                 }
                 else {

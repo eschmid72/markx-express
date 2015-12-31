@@ -1,17 +1,65 @@
 doctype html
 html
-    head
-        title!='Titel'
-        script(type='text/javascript' src='/bower_components/jquery/dist/jquery.min.js')
-        link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.min.css', type='text/css')
-        link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap-theme.min.css', type='text/css')
-        script(type='text/javascript' src='/bower_components/bootstrap/dist/js/bootstrap.min.js')
-        link(rel='stylesheet', href='/bower_components/github-markdown-css/github-markdown.css', type='text/css')
-        style(type='text/css').
-            .markdown-body .highlight pre, .markdown-body pre {
-                background-color: #000;
-                color: #fff;
-            }
-    body
-        .container-fluid
-            div.markdown-body!=markdown
+	head
+		title!='Titel'
+		script(type='text/javascript' src='/bower_components/jquery/dist/jquery.min.js')
+		link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.min.css', type='text/css')
+		link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap-theme.min.css', type='text/css')
+		script(type='text/javascript' src='/bower_components/bootstrap/dist/js/bootstrap.min.js')
+		link(rel='stylesheet', href='/bower_components/github-markdown-css/github-markdown.css', type='text/css')
+		style(type='text/css').
+			.markdown-body .highlight pre, .markdown-body pre {
+				background-color: #000;
+				color: #fff;
+			}
+	body
+
+		nav.navbar.navbar-default.navbar-static-top
+			.container-fluid
+				.navbar-header
+					button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+						span.sr-only Toggle navigation
+						span.icon-bar
+						span.icon-bar
+						span.icon-bar
+
+					a.navbar-brand(href='/') Home
+
+				//-#navbar.navbar-collapse.collapse
+					ul.nav.navbar-nav
+						li.active
+							a(href='#') Home
+						li
+							a(href='#about') About
+						li
+							a(href='#contact') Contact
+						li.dropdown
+							a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+								| Dropdown
+								span.caret
+							ul.dropdown-menu
+								li
+									a(href='#') Action
+								li
+									a(href='#') Another action
+								li
+									a(href='#') Something else here
+								li.divider(role='separator')
+
+								li.dropdown-header Nav header
+								li
+									a(href='#') Separated link
+								li
+									a(href='#') One more separated link
+					ul.nav.navbar-nav.navbar-right
+						li
+							a(href='../navbar/') Default
+						li.active
+							a(href='./')
+								| Static top
+								span.sr-only (current)
+						li
+							a(href='../navbar-fixed-top/') Fixed top
+
+		.container-fluid
+			div.markdown-body!=markdown
