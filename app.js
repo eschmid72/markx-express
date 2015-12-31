@@ -8,6 +8,7 @@ var md = require('markdown-it')({
     highlight: function (str, lang) {
         if (lang && hljs.getLanguage(lang)) {
             try {
+                console.log(str, lang)
                 return hljs.highlight(lang, str).value;
             } catch (__) {}
         }
