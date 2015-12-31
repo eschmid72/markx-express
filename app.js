@@ -2,7 +2,8 @@ var fs = require('fs'),
     path = require('path'),
     url = require('url'),
     express = require('express'),
-    marked = require('marked');
+    showdown = require('showdown'),
+    converter = new showdown.Converter();
 
 var app = express();
 
@@ -11,12 +12,6 @@ app.set('view engine', 'jade');
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
 
 var config = fs.existsSync(__dirname+'/config.json') ? require('./config.json') : {};
-
-marked.setOptions({
-    highlight: function (code) {
-        return require('highlight.js').highlightAuto(code).value;
-    }
-});
 
 var expressMarkdown = function (options) {
     if (!options)
@@ -55,7 +50,7 @@ var expressMarkdown = function (options) {
                 if (err)
                     return next(err);
 
-                data = marked(data);
+                data = converter.makeHtml(data);
 
                 if (view) {
                     context[variable] = data;
