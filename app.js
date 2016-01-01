@@ -67,4 +67,4 @@ app.use('/bower_components', express.static(__dirname + '/bower_components'));
 app.use(expressMarkdown(config));
 var port = config.port || 5000;
 app.listen(port);
-console.log('App listening on port '+port)
+console.log('App listening on port '+port)+'.';
