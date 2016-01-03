@@ -1,18 +1,51 @@
 doctype html
 html
 	head
-		title!='Titel'
+		title!='Markdown-Doc'
 		script(type='text/javascript' src='/bower_components/jquery/dist/jquery.min.js')
 		link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.min.css', type='text/css')
 		link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap-theme.min.css', type='text/css')
 		script(type='text/javascript' src='/bower_components/bootstrap/dist/js/bootstrap.min.js')
 		link(rel='stylesheet', href='/bower_components/github-markdown-css/github-markdown.css', type='text/css')
 		link(rel='stylesheet', href='//rawgit.com/isagalaev/highlight.js/master/src/styles/solarized-dark.css', type='text/css')
+		script(type='text/javascript' src='/bower_components/clipboard/dist/clipboard.js')
 		style(type='text/css').
 			.markdown-body .highlight pre, .markdown-body pre {
 				background-color: #000;
-				color: #fff;
+				color: #fff
 			}
+
+			.markdown-body pre {
+				position: relative
+			}
+
+			.markdown-body pre button {
+				position: absolute;
+				top: 2px;
+				right: 2px;
+				color: #000;
+				background: #fff;
+				border: none;
+				display: none;
+				width: 30px;
+				height: 30px;
+			}
+
+			.markdown-body pre:hover button {
+				display: block;
+			}
+
+		script(type='text/javascript').
+			$(document).ready(function () {
+				$('<button class="glyphicon glyphicon-copy" title="copy"></button>').appendTo('.markdown-body pre');
+				new Clipboard('.markdown-body pre button', {
+					target: function (trigger) {
+						return $(trigger).parent().find('code')[0];
+					}
+				});
+			});
+
+
 	body
 
 		nav.navbar.navbar-default.navbar-static-top

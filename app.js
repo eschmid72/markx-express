@@ -48,7 +48,6 @@ var expressMarkdown = function (options) {
 				if (err) {
 					return next(err);
 				}
-
 				res.render('markdown', {markdown: md.render(data)});
 			});
 		});
