@@ -26,6 +26,7 @@
     "jquery": "^2.1.4",
     "markdown-it": "^5.0.2",
     "markdown-it-anchor": "^2.3.3",
+    "markdown-it-toc": "^1.1.0",
     "underscore": "^1.8.3"
   }
 }

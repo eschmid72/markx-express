@@ -21,7 +21,9 @@ var md = require('markdown-it')({
 
 		return ''; // use external default escaping
 	}
-}).use(require('markdown-it-anchor'), {});
+})
+.use(require('markdown-it-anchor'), {})
+.use(require('markdown-it-toc'));
 
 var expressMarkdown = function (options) {
 	var dir = path.resolve(options.directory);
