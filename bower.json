@@ -17,6 +17,7 @@
     "github-markdown-css": "~2.1.1",
     "bootstrap": "~3.3.6",
     "clipboard": "~1.5.5",
-    "ace": "~1.2.2"
+    "ace": "~1.2.2",
+    "highlightjs": "~9.0.0"
   }
 }

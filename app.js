@@ -2,8 +2,8 @@ var fs = require('fs'),
   path = require('path'),
   url = require('url'),
   express = require('express'),
-  _ = require('underscore');
-hljs = require('highlight.js');
+  _ = require('underscore'),
+  hljs = require('highlight.js');
 
 var md = require('markdown-it')({
   highlight: function (str, lang) {
@@ -21,8 +21,7 @@ var md = require('markdown-it')({
 
     return ''; // use external default escaping
   }
-})
-  .use(require('markdown-it-anchor'), {})
+}).use(require('markdown-it-anchor'), {})
   .use(require('markdown-it-toc'));
 
 var expressMarkdown = function (options) {
@@ -31,6 +30,10 @@ var expressMarkdown = function (options) {
   return function (req, res, next) {
     var file = req.url.toString().toLowerCase();
 
+    var test = file.match(/^(.*)\.md$/);
+    if(test) {
+      file = test[1];
+    }
     if (file === '/') {
       file = 'index';
     }
@@ -50,7 +53,7 @@ var expressMarkdown = function (options) {
         if (err) {
           return next(err);
         }
-        res.render('markdown', {markdown: md.render(data)});
+        res.render('markdown-show', {markdown: md.render(data)});
       });
     });
   }
