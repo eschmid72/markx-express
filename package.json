@@ -1,7 +1,7 @@
 {
-  "name": "kade-bootstrap",
+  "name": "markx-express",
   "version": "0.0.0",
-  "description": "",
+  "description": "Hosting documentations written with Markdown language using node express",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,20 +10,25 @@
     "name": "Egon Schmid"
   },
   "license": "ISC",
-  "homepage": "https://github.com/eschmid72/jade-bootstrap",
+  "homepage": "https://github.com/eschmid72/markx-express",
   "bugs": {
-    "url": "https://github.com/eschmid72/jade-bootstrap/issues"
+    "url": "https://github.com/eschmid72/markx-express/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/eschmid72/jade-bootstrap"
+    "url": "https://github.com/eschmid72/markx-express"
   },
   "dependencies": {
     "express": "^4.13.3",
     "gulp": "^3.9.0",
     "gulp-less": "^3.0.5",
+    "highlight.js": "^9.0.0",
     "jade": "^1.11.0",
     "jade-filters": "^1.1.0",
-    "jquery": "^2.1.4"
+    "jquery": "^2.1.4",
+    "markdown-it": "^5.0.2",
+    "markdown-it-anchor": "^2.3.3",
+    "markdown-it-toc": "^1.1.0",
+    "underscore": "^1.8.3"
   }
 }
