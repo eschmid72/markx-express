@@ -39,6 +39,10 @@ html
         display: block;
       }
 
+      .wrapper {
+        padding-bottom:50px;
+      }
+
     script(type='text/javascript').
       $(document).ready(function () {
         $('<button class="glyphicon glyphicon-copy" title="copy"></button>').appendTo('.markdown-body pre');
@@ -59,5 +63,6 @@ html
             span.icon-bar
       a.navbar-brand(href='/') Home
 
-    .container-fluid
-      div.markdown-body!=markdown
+    .wrapper
+      .container-fluid
+        div.markdown-body!=markdown
