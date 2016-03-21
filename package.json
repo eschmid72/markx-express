@@ -19,16 +19,16 @@
     "url": "https://github.com/eschmid72/markx-express"
   },
   "dependencies": {
-    "express": "^4.13.3",
-    "gulp": "^3.9.0",
-    "gulp-less": "^3.0.5",
-    "highlight.js": "^9.0.0",
-    "jade": "^1.11.0",
-    "jade-filters": "^1.1.0",
-    "jquery": "^2.1.4",
-    "markdown-it": "^5.0.2",
-    "markdown-it-anchor": "^2.3.3",
-    "markdown-it-toc": "^1.1.0",
-    "underscore": "^1.8.3"
+    "express": "*",
+    "gulp": "*",
+    "gulp-less": "*",
+    "highlight.js": "*",
+    "jade": "*",
+    "jade-filters": "*",
+    "jquery": "*",
+    "markdown-it": "^6.0.0",
+    "markdown-it-anchor": "*",
+    "markdown-it-toc": "*",
+    "underscore": "*"
   }
 }
